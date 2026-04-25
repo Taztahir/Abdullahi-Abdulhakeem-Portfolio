@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="text-center md:text-left">
              <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.4em] mb-2">Designed & Built by</p>
-             <p className="text-white/50 text-sm font-bold uppercase tracking-widest italic font-serif">Abdullah Scott © 2026</p>
+             <p className="text-white/50 text-sm font-bold uppercase tracking-widest italic font-serif">Abdullah Abdulhakeem © 2026</p>
           </div>
           
           <button 

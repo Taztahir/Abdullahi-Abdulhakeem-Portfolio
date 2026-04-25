@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div className={`flex items-center gap-2 group cursor-pointer transition-colors duration-500 ${isScrolled ? 'text-white' : 'text-black'}`}>
-            <span className="text-sm font-bold tracking-tight">© Abdullah Scott</span>
+            <span className="text-sm font-bold tracking-tight">© Abdullah Abdulhakeem</span>
           </div>
 
           {/* Desktop Nav */}

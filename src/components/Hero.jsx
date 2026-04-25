@@ -4,137 +4,97 @@ import AbdullahProfile from '../assets/AbdullahProfile.jpeg';
 
 const Hero = () => {
   // Animation Variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-    }
-  };
-
-  const textRevealVariants = {
-    hidden: { y: "120%", rotate: 5, opacity: 0 },
-    visible: { 
-      y: 0, 
-      rotate: 0,
-      opacity: 1,
-      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } 
-    }
-  };
-
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 1, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" }
     }
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 md:pb-20 overflow-hidden bg-primary">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-20 overflow-hidden bg-[#9FDF43]">
       {/* Subtle Grain Overlay */}
       <div className="absolute inset-0 opacity-[0.05] z-30 pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      
-      {/* Massive Background Marquee (Infinite Scroll) */}
-      <div className="absolute top-[20%] left-0 w-full z-0 pointer-events-none opacity-10 overflow-hidden flex">
+
+      {/* Center Portrait */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] md:w-[50%] max-w-[700px] h-[85vh] z-10 pointer-events-none flex items-end justify-center">
         <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
-          className="flex whitespace-nowrap"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+          className="w-full h-full relative"
         >
-          <h1 className="text-[25vw] md:text-[35vw] font-black leading-none tracking-tighter text-black px-8">ABDULLAH SCOTT</h1>
-          <h1 className="text-[25vw] md:text-[35vw] font-black leading-none tracking-tighter text-black px-8">ABDULLAH SCOTT</h1>
+          <img
+            src={AbdullahProfile}
+            alt="Abdullah Abdulhakeem"
+            className="w-full h-full object-cover object-top mix-blend-multiply"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-80" />
         </motion.div>
       </div>
 
+      {/* Massive Overlapping Marquee */}
       <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8 w-full min-h-[75vh]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.8 }}
+        className="absolute top-1/2 -translate-y-1/2 left-0 w-full z-20 pointer-events-none flex overflow-hidden mix-blend-difference text-[#9FDF43]"
       >
-        
-        {/* Left Column - Typography & Details */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start pt-10 md:pt-0">
-          
-          {/* Top Minimal Info */}
-          <motion.div variants={fadeUpVariants} className="flex gap-12 opacity-60 mb-8 md:mb-16">
-            <div className="flex flex-col gap-1 text-[10px] md:text-xs font-bold text-[#111] uppercase tracking-widest">
-              <span>Available for</span>
-              <span>Freelance Work</span>
-            </div>
-            <div className="flex flex-col gap-1 text-[10px] md:text-xs font-bold text-[#111] uppercase tracking-widest">
-              <span>Based in</span>
-              <span>Worldwide</span>
-            </div>
-          </motion.div>
-
-          {/* Main Heading - Mask Reveal */}
-          <div className="mb-12 md:mb-20">
-            <div className="overflow-hidden py-2">
-              <motion.h1 variants={textRevealVariants} className="text-[20vw] md:text-[10vw] lg:text-[12vw] font-black leading-[0.8] tracking-tighter text-[#111]">
-                Abdullah
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden py-2">
-              <motion.h1 variants={textRevealVariants} className="text-[20vw] md:text-[10vw] lg:text-[12vw] font-black leading-[0.8] tracking-tighter text-[#111]">
-                Scott
-              </motion.h1>
-            </div>
-          </div>
-
-          {/* Bottom Details */}
-          <div className="flex flex-col gap-8 w-full">
-            <motion.div variants={fadeUpVariants}>
-              <h2 className="text-2xl md:text-4xl font-black text-[#111] leading-[1] tracking-tight">
-                // Web Designer<br />
-                Art Director
-              </h2>
-            </motion.div>
-
-            <motion.div variants={fadeUpVariants} className="flex flex-wrap gap-4 md:gap-6 mt-4">
-              {['LinkedIn', 'Twitter', 'Instagram'].map((social, i) => (
-                <motion.a 
-                  key={social}
-                  href="#" 
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-xs md:text-sm font-bold text-[#111] hover:opacity-50 transition-all uppercase tracking-widest"
-                >
-                  {social}
-                </motion.a>
-              ))}
-            </motion.div>
-          </div>
-
-        </div>
-
-        {/* Right Column - Portrait */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end relative h-[50vh] md:h-[75vh]">
-          {/* Image Reveal Mask + Floating Animation */}
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "100%", opacity: 1 }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
-            className="relative w-full max-w-[450px] lg:max-w-[550px] overflow-hidden"
-          >
-            <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="w-full h-full"
-            >
-              <img 
-                src={AbdullahProfile} 
-                alt="Abdullah Scott" 
-                className="w-full h-full object-cover object-top rounded-sm shadow-2xl mix-blend-multiply origin-bottom"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60" />
-            </motion.div>
-          </motion.div>
-        </div>
-
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+          className="flex whitespace-nowrap items-center"
+        >
+          <h1 className="text-[25vw] md:text-[22vw] font-black leading-none tracking-tighter px-8">Abdullah Abdulhakeem</h1>
+          <h1 className="text-[25vw] md:text-[22vw] font-black leading-none tracking-tighter px-8">Abdullah Abdulhakeem</h1>
+        </motion.div>
       </motion.div>
+
+      <div className="container mx-auto px-6 relative z-30 flex flex-col justify-end w-full h-[85vh] md:h-[80vh]">
+        {/* Bottom Details */}
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end pb-4">
+
+          {/* Social Links (Bottom Left) */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.2, delayChildren: 1.2 } }
+            }}
+            className="flex flex-col gap-3 mb-8 md:mb-0"
+          >
+            {['LinkedIn', 'Twitter', 'Instagram'].map((social) => (
+              <motion.a
+                key={social}
+                variants={fadeUpVariants}
+                href="#"
+                className="text-xs md:text-sm font-bold text-[#111] hover:opacity-50 transition-opacity flex items-center gap-2"
+              >
+                <span className="w-4 h-4 rounded-sm border border-[#111]/20 flex items-center justify-center text-[10px]">
+                  {social === 'LinkedIn' ? 'in' : social === 'Twitter' ? '𝕏' : 'ig'}
+                </span>
+                {social}
+              </motion.a>
+            ))}
+          </motion.div>
+
+          {/* Profession Tagline (Bottom Right) */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="text-left md:text-right"
+          >
+            <h2 className="text-3xl md:text-5xl lg:text-[4vw] font-black text-[#111] leading-[0.9] tracking-tight">
+              // Web Designer<br />
+              Art Director
+            </h2>
+          </motion.div>
+
+        </div>
+      </div>
     </section>
   );
 };
