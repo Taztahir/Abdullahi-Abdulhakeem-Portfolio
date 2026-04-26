@@ -40,7 +40,7 @@ const Hero = () => {
         >
           {[...Array(4)].map((_, i) => (
             <h1 key={i} className="text-[15vw] font-black whitespace-nowrap leading-[0.8] tracking-tighter text-transparent px-8" style={{ WebkitTextStroke: '2px white' }}>
-              UI/UX EXPERT
+              BRAND DESIGNER
             </h1>
           ))}
         </motion.div>
@@ -81,7 +81,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-white/50 text-base md:text-lg max-w-md font-medium leading-relaxed mb-12"
           >
-            I'm <span className="text-white font-bold">Abdullah Abdulhakeem</span>, a Product Designer focusing on creating intuitive, high-converting, and beautiful interfaces.
+            I'm <span className="text-white font-bold">Abdullah Abdulhakeem</span>, a Product Designer, Brand Designer, and Graphic Designer focusing on creating stunning visual identities and intuitive interfaces.
           </motion.p>
 
           <motion.div
@@ -144,7 +144,7 @@ const Hero = () => {
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between backdrop-blur-md bg-black/40 border border-white/10 p-4 rounded-2xl">
                 <div>
                   <p className="text-white font-bold text-sm">Abdullah Abdulhakeem</p>
-                  <p className="text-primary text-xs font-medium tracking-wider uppercase mt-1">Product Designer</p>
+                  <p className="text-primary text-xs font-medium tracking-wider uppercase mt-1">Product & Brand Designer</p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-black">
                   <ArrowUpRight size={20} />
@@ -178,7 +178,7 @@ const Hero = () => {
           {[...Array(6)].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="text-black font-black uppercase tracking-[0.2em] px-8 text-sm md:text-base">
-                Web Design ✦ App Design ✦ UI/UX ✦ Branding ✦
+                Product Design ✦ Brand Design ✦ Graphic Design ✦ UI/UX ✦
               </span>
             </div>
           ))}

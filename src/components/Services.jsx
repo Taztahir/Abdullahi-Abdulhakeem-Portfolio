@@ -27,15 +27,15 @@ const services = [
     ]
   },
   {
-    title: 'Web Development',
-    description: 'Building high-performance, responsive websites that deliver exceptional user experiences.',
+    title: 'Graphic Design',
+    description: 'Crafting compelling visual communication and marketing materials that capture attention and tell a story.',
     items: [
-      'Frontend Development',
-      'Next.js / React',
-      'Responsive Design',
-      'Animations & Interactions',
-      'CMS Integration',
-      'Performance Optimization'
+      'Marketing Materials',
+      'Social Media Graphics',
+      'Packaging Design',
+      'Typography & Layout',
+      'Illustration',
+      'Editorial Design'
     ]
   }
 ];

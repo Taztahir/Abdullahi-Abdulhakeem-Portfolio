@@ -24,8 +24,8 @@ const About = () => {
             }}
             className="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-20 flex flex-wrap gap-x-3 gap-y-2"
           >
-            {("I'm a versatile designer who partners with founders to turn ideas into real products. I focus on clear interfaces, sharp decisions, and fast execution.".split(" ")).map((word, index) => {
-              const isHighlight = word.includes("designer") || word.includes("products.");
+            {("I'm a Product, Brand, and Graphic Designer who partners with founders to turn complex ideas into stunning visual identities and digital products.".split(" ")).map((word, index) => {
+              const isHighlight = word.includes("Designer") || word.includes("visual") || word.includes("identities") || word.includes("products.");
               return (
                 <motion.span
                   key={index}

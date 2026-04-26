@@ -45,7 +45,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="text-[11px] font-bold uppercase tracking-[0.1em] opacity-70 hover:opacity-100 transition-opacity">
+            <a href="mailto:hello@abdullah.com" className="text-[11px] font-bold uppercase tracking-[0.1em] opacity-70 hover:opacity-100 transition-opacity">
               Contact
             </a>
           </div>
@@ -82,9 +82,12 @@ const Navbar = () => {
                   </a>
                 ))}
                 <div className="h-px bg-white/10 my-4" />
-                <button className="bg-primary text-black px-6 py-4 rounded-full font-black uppercase tracking-widest text-xs">
+                <a 
+                  href="mailto:hello@abdullah.com"
+                  className="bg-primary text-black px-6 py-4 rounded-full font-black uppercase tracking-widest text-xs text-center hover:bg-white transition-colors"
+                >
                   Start Project
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
