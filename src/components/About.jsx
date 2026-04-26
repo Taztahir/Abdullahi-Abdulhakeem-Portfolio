@@ -14,17 +14,32 @@ const About = () => {
             // Intro
           </motion.span>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-4xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-20"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.05 } },
+              hidden: {}
+            }}
+            className="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-20 flex flex-wrap gap-x-3 gap-y-2"
           >
-            I'm a versatile <span className="text-primary">designer</span> who 
-            partners with founders to turn ideas into 
-            <span className="text-primary"> real products.</span> I focus on clear interfaces, 
-            sharp decisions, and fast execution.
-          </motion.h2>
+            {("I'm a versatile designer who partners with founders to turn ideas into real products. I focus on clear interfaces, sharp decisions, and fast execution.".split(" ")).map((word, index) => {
+              const isHighlight = word.includes("designer") || word.includes("products.");
+              return (
+                <motion.span
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 50, rotate: 5 },
+                    visible: { opacity: 1, y: 0, rotate: 0, transition: { type: "spring", damping: 12, stiffness: 100 } }
+                  }}
+                  className={`inline-block ${isHighlight ? "text-primary" : "text-white"}`}
+                >
+                  {word}
+                </motion.span>
+              );
+            })}
+          </motion.div>
 
           <div className="flex flex-col md:flex-row justify-end gap-12">
             <div className="max-w-md">

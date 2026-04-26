@@ -53,35 +53,81 @@ const Services = () => {
             // Services
           </motion.span>
 
-          <div className="space-y-32">
+          <div className="space-y-40">
             {services.map((service, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.1 } },
+                  hidden: {}
+                }}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start relative"
               >
-                {/* Outlined Number */}
-                <div className="lg:col-span-4">
-                  <span className="text-[12vw] lg:text-[8vw] font-black leading-none tracking-tighter opacity-20" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.5)', color: 'transparent' }}>
-                    0{index + 1}
-                  </span>
+                {/* Outlined Number - Sticky Sidebar */}
+                <div className="lg:col-span-4 h-full relative">
+                  <motion.div 
+                    variants={{
+                      hidden: { opacity: 0, x: -50 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                    }}
+                    className="sticky top-32 hidden lg:block"
+                  >
+                    <span className="text-[12vw] lg:text-[10vw] font-black leading-none tracking-tighter opacity-20" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.3)', color: 'transparent' }}>
+                      0{index + 1}
+                    </span>
+                  </motion.div>
+                  {/* Mobile Number (Non-sticky) */}
+                  <motion.div 
+                    variants={{
+                      hidden: { opacity: 0, x: -50 },
+                      visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                    }}
+                    className="lg:hidden block"
+                  >
+                    <span className="text-[15vw] font-black leading-none tracking-tighter opacity-20" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.3)', color: 'transparent' }}>
+                      0{index + 1}
+                    </span>
+                  </motion.div>
                 </div>
 
                 {/* Service Details */}
-                <div className="lg:col-span-8">
-                  <h3 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">{service.title}</h3>
-                  <p className="text-white/40 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl">
+                <div className="lg:col-span-8 pt-4">
+                  <motion.h3 
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight"
+                  >
+                    {service.title}
+                  </motion.h3>
+                  
+                  <motion.p 
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="text-white/40 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl"
+                  >
                     {service.description}
-                  </p>
+                  </motion.p>
 
                   <div className="border-t border-white/10">
                     {service.items.map((item, i) => (
-                      <div key={i} className="flex justify-between items-center py-4 border-b border-white/5 group cursor-default">
-                        <span className="text-white/60 group-hover:text-primary transition-colors font-medium">{item}</span>
-                        <span className="text-white/20 text-xs font-mono">0{i + 1}</span>
-                      </div>
+                      <motion.div 
+                        key={i} 
+                        variants={{
+                          hidden: { opacity: 0, x: 20 },
+                          visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+                        }}
+                        className="flex justify-between items-center py-6 border-b border-white/5 group cursor-default hover:pl-4 transition-all duration-300"
+                      >
+                        <span className="text-white/60 text-lg group-hover:text-primary transition-colors font-medium">{item}</span>
+                        <span className="text-white/20 text-sm font-mono group-hover:text-primary transition-colors">0{i + 1}</span>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
