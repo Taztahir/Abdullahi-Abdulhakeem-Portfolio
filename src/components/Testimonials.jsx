@@ -79,7 +79,7 @@ const Testimonials = () => {
           </motion.h2>
         </div>
 
-        <div className="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] flex items-center justify-center perspective-[2000px]">
+        <div className="relative w-full max-w-4xl mx-auto h-[450px] md:h-[500px] flex items-center justify-center perspective-[2000px]">
           <AnimatePresence mode="popLayout">
             {cards.map((testimonial, index) => {
               // Calculate stack styles
