@@ -8,10 +8,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'Github', href: '#' },
-    { name: 'Twitter', href: '#' },
-    { name: 'Linkedin', href: '#' },
-    { name: 'Instagram', href: '#' }
+    { name: 'Instagram', href: 'https://www.instagram.com/abdullahi_thecreator?igsh=OTluaXVzMG1jZWUw' },
+    { name: 'Facebook', href: 'https://www.facebook.com/share/1XXJA1zSLQ/' },
+    { name: 'Linkedin', href: 'https://www.linkedin.com/in/abdullahi-abdulhakeem-92b6182a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' }
   ];
 
   return (
@@ -40,11 +39,11 @@ const Footer = () => {
 
             <div className="mt-10">
               <a
-                href="mailto:hello@abdullah.com"
+                href="mailto:abdullahiabdulhakeem234@gmail.com"
                 className="inline-flex items-center gap-6 group"
               >
                 <span className="text-2xl md:text-5xl font-medium text-white group-hover:text-primary transition-colors border-b-2 border-transparent group-hover:border-primary pb-2">
-                  hello@abdullah.com
+                  abdullahiabdulhakeem234@gmail.com
                 </span>
                 <span className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-primary group-hover:text-black group-hover:border-primary transition-all">
                   <ArrowUpRight size={24} className="group-hover:rotate-45 transition-transform" />
@@ -65,7 +64,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-4">
                 {socialLinks.map((social) => (
                   <li key={social.name}>
-                    <a href={social.href} className="text-white/80 text-xl font-medium hover:text-primary transition-colors flex items-center gap-2 group w-max">
+                    <a href={social.href} target="_blank" rel="noopener noreferrer" className="text-white/80 text-xl font-medium hover:text-primary transition-colors flex items-center gap-2 group w-max">
                       {social.name}
                       <ArrowUpRight size={16} className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                     </a>
@@ -80,7 +79,7 @@ const Footer = () => {
         {/* Minimalist Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-black font-black text-sm">A</div>
+            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-black font-black text-sm">A</div>
             <span className="text-white font-bold tracking-tighter uppercase text-sm">Abdullah.</span>
           </div>
 
