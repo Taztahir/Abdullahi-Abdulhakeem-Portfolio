@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Download } from 'lucide-react';
+import { ArrowUpRight, Download, X } from 'lucide-react';
 import AbdullahProfile from '../assets/Abdullah-Nobackground.png';
 
 const Hero = () => {
@@ -10,11 +10,15 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-[#030303] flex flex-col items-center justify-center overflow-hidden pt-28">
-      {/* Background Noise Effect */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+    <section id="home" className="relative min-h-screen bg-white dark:bg-[#030303] flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-20 transition-colors duration-500">
+      {/* Checkerboard Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(45deg, #000000 25%, transparent 25%), linear-gradient(-45deg, #000000 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #000000 75%), linear-gradient(-45deg, transparent 75%, #000000 75%)', backgroundSize: '100px 100px', backgroundPosition: '0 0, 0 50px, 50px 50px, 50px 0' }} />
 
-      <div className="container px-4 md:px-0 md:mx-auto md:max-w-[1400px] relative z-10 flex-grow flex items-center">
+      {/* Background Noise Effect */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }} />
+
+      <div className="container px-4 md:px-10 lg:px-0 lg:mx-auto lg:max-w-[1400px] relative z-10 flex-grow flex items-center">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 w-full pb-20">
 
           {/* Left Side: Content */}
@@ -23,9 +27,14 @@ const Hero = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-primary/20 bg-primary/5 text-primary"
+              className="mb-8 relative px-6 py-1"
             >
-              <span className="text-xs font-black uppercase tracking-widest">Hello There!</span>
+              {/* Corner Brackets */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary" />
+              <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary" />
+              <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary" />
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-900 dark:text-white">Hello There!</span>
             </motion.div>
 
             <motion.div
@@ -34,11 +43,14 @@ const Hero = () => {
               variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
               className="flex flex-col mb-8"
             >
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-black text-white leading-[1] tracking-tighter mb-4">
-                I'm <span className="text-primary italic font-serif font-light">Abdullah</span>
+              <motion.h1 variants={fadeUp} className="text-5xl md:text-[80px] font-bold leading-[1.05] tracking-tight mb-2">
+                <span className="text-primary">I'm Abdullahi,</span>
               </motion.h1>
-              <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl font-black text-white leading-[1] tracking-tighter">
-                Product Designer based in Lagos.
+              <motion.h1 variants={fadeUp} className="text-5xl md:text-[80px] font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight mb-2">
+                Product Designer
+              </motion.h1>
+              <motion.h1 variants={fadeUp} className="text-5xl md:text-[80px] font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight">
+                based in Nigeria.
               </motion.h1>
             </motion.div>
 
@@ -46,9 +58,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-white/60 text-lg md:text-xl max-w-xl font-medium leading-relaxed mb-10"
+              className="text-gray-500 dark:text-white/40 text-lg md:text-xl max-w-xl font-medium leading-relaxed mb-12"
             >
-              I am an experienced Product Designer with a focus on creating intuitive digital experiences and stunning visual identities for global brands.
+              I'm an experienced Product Designer with 4+ years in the field, collaborating with various companies and startups.
             </motion.p>
 
             <motion.div
@@ -57,50 +69,47 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-wrap items-center gap-6"
             >
-              <a href="#projects" className="group relative inline-flex items-center justify-center gap-3 bg-primary text-black px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(163,255,51,0.3)]">
+              <a href="#projects" className="bg-primary text-black px-10 py-4 rounded-full font-bold text-[14px] hover:scale-105 transition-all shadow-lg shadow-primary/20">
                 View My Work
               </a>
-              <a href="#" className="group inline-flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs border border-white/10 transition-all hover:scale-105">
-                Download CV <Download size={16} />
+              <a href="#" className="bg-transparent border border-black/10 dark:border-white/20 text-gray-900 dark:text-white px-10 py-4 rounded-full font-bold text-[14px] hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+                Download CV
               </a>
             </motion.div>
           </div>
 
           {/* Right Side: Image with Graphics */}
           <div className="w-full lg:w-1/2 flex items-center justify-center relative order-1 lg:order-2 py-12">
-            <div className="relative w-full max-w-[450px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-[550px] aspect-square flex items-center justify-center">
 
-              {/* Massive Green Graphic Circle */}
+              {/* Green Graphic Circle with Wavy Pattern */}
               <motion.div
-                initial={{ scale: 0, rotate: -45 }}
-                animate={{ scale: 1, rotate: 0 }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="absolute inset-0 bg-primary rounded-full opacity-100 z-0 overflow-hidden"
+                className="absolute w-[80%] h-[80%] bg-primary rounded-full z-0 overflow-hidden flex items-center justify-center"
               >
-                {/* Visual patterns inside circle */}
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_transparent_0%,_black_100%)]" />
-                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '12px 12px' }} />
+                <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/wavy-lines.png')" }} />
               </motion.div>
 
-              {/* Floating Badge 1: Product Designer */}
+              {/* Floating Label: Product Designer */}
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="absolute bottom-10 -left-2 md:-left-4 z-20 bg-primary text-black px-3 py-1.5 md:px-4 md:py-2 rounded-full font-black text-[8px] md:text-[10px] uppercase tracking-widest shadow-2xl flex items-center gap-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+                className="absolute bottom-1/4 left-0 z-30 bg-primary text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider flex items-center gap-2"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                <div className="w-2 h-2 bg-black rounded-full" />
                 Product Designer
               </motion.div>
 
-              {/* Floating Badge 2: UI/UX Designer */}
+              {/* Floating Label: UI/UX Designer */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1, duration: 0.6 }}
-                className="absolute top-1/2 -right-4 md:-right-8 z-20 bg-black text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full font-black text-[8px] md:text-[10px] uppercase tracking-widest border border-white/20 shadow-2xl flex items-center gap-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.4, duration: 0.6 }}
+                className="absolute top-1/2 right-10 z-30 bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider border border-white/20 dark:border-black/20"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 UI/UX Designer
               </motion.div>
 
@@ -109,51 +118,52 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="relative z-10 w-[100%] h-[100%] md:w-[110%] md:h-[110%] flex items-end justify-center overflow-hidden -bottom-2 md:-bottom-4"
+                className="relative z-10 w-[100%] h-[100%] flex items-end justify-center overflow-hidden"
               >
                 <img
                   src={AbdullahProfile}
-                  alt="Abdullah Abdulhakeem"
-                  className="w-full h-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  alt="Abdullahi"
+                  className="w-[90%] h-auto object-contain filter grayscale drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 />
               </motion.div>
 
               {/* Circular Text Badge */}
-              <motion.div
+              <motion.a
+                href="#contact"
                 animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-                className="absolute -top-4 right-4 w-24 h-24 z-20 hidden md:block"
+                transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                className="absolute top-1/4 right-0 w-28 h-28 z-20 hidden md:block group/badge cursor-pointer"
               >
                 <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                  <text className="text-[10px] font-black uppercase fill-black tracking-[0.2em]">
+                  <path id="circlePath" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
+                  <text className="text-[10px] font-bold uppercase fill-gray-900 dark:fill-white tracking-[0.1em] transition-colors group-hover/badge:fill-primary">
                     <textPath xlinkHref="#circlePath">
-                      ✦ Portfolio 2024 ✦ Hire Me ✦ Design ✦
+                      ✦ Hire Me ✦ Hire Me ✦ Hire Me ✦ Hire Me ✦
                     </textPath>
                   </text>
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                    <ArrowUpRight size={20} className="text-primary" />
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black group-hover/badge:scale-110 transition-transform">
+                    <X size={20} className="font-bold" />
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Scrolling Marquee line - Now using relative positioning to prevent overlap */}
+      {/* Bottom Scrolling Marquee line */}
       <div className="w-full relative bg-primary py-5 overflow-hidden border-t border-primary mt-auto">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 15 }}
           className="flex whitespace-nowrap items-center"
         >
-          {[...Array(6)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center">
-              <span className="text-black font-black uppercase tracking-[0.2em] px-8 text-sm md:text-lg">
-                Web Design ✦ App Design ✦ Dashboard ✦ Wireframe ✦ Visual Identity ✦
+              <span className="text-black font-bold uppercase tracking-tight px-12 text-2xl flex items-center gap-12">
+                Web Design <span className="text-3xl">✻</span> App Design <span className="text-3xl">✻</span> Dashboard <span className="text-3xl">✻</span> Wireframe <span className="text-3xl">✻</span>
               </span>
             </div>
           ))}

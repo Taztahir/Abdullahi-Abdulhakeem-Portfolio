@@ -1,183 +1,118 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Quote, ArrowRight, ArrowLeft } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
-    role: 'CEO at TechFlow',
-    content: 'Abdullah possesses a rare talent for balancing complex business requirements with elegant, human-centric design. He transformed our platform completely.',
+    name: 'Leslie Alexander',
+    role: 'CEO, Software Company',
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop',
-    color: 'from-[#1a1a1a] to-[#0a0a0a]'
+    rating: 5.0
   },
   {
     id: 2,
-    name: 'Marcus Chen',
-    role: 'Product Manager at Innovate',
-    content: 'The attention to detail in his work is unmatched. He doesn\'t just design screens; he designs complete experiences that convert and retain users seamlessly.',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop',
-    color: 'from-[#0A1105] to-[#050505]'
+    name: 'Dianne Russell',
+    role: 'CEO, Event Booking App',
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
+    rating: 5.0
   },
   {
     id: 3,
-    name: 'Elena Rodriguez',
-    role: 'Founder at Growthify',
-    content: 'Working with Abdullah was a game-changer. His ability to understand our users and craft an interface that simply makes sense has driven our engagement up by 200%.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
-    color: 'from-[#111111] to-[#000000]'
+    name: 'Kathryn Murphy',
+    role: 'CEO, Coffee Shop App',
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop',
+    rating: 5.0
+  },
+  {
+    id: 4,
+    name: 'Robert Fox',
+    role: 'CEO, Pet Food App',
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop',
+    rating: 5.0
   }
 ];
 
 const Testimonials = () => {
-  const [cards, setCards] = useState(testimonials);
-
-  const nextCard = () => {
-    setCards((prevCards) => {
-      const newCards = [...prevCards];
-      const firstCard = newCards.shift();
-      newCards.push(firstCard);
-      return newCards;
-    });
-  };
-
-  const prevCard = () => {
-    setCards((prevCards) => {
-      const newCards = [...prevCards];
-      const lastCard = newCards.pop();
-      newCards.unshift(lastCard);
-      return newCards;
-    });
-  };
-
   return (
-    <section id="testimonials" className="py-10 bg-[#030303] relative overflow-hidden">
-      {/* Background Noise */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+    <section id="testimonials" className="py-20 bg-white dark:bg-[#030303] text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-500">
+      {/* Background Text */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.02] z-0">
+        <span className="text-[12rem] font-black tracking-tighter uppercase leading-none whitespace-nowrap text-gray-900 dark:text-white">CLIENT TESTIMONIALS</span>
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
-
-        <div className="text-center mb-10 max-w-4xl mx-auto">
+        <div className="flex flex-col items-center mb-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/20 bg-primary/10 mb-8"
+            className="mb-6 relative px-6 py-1"
           >
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-primary font-bold tracking-widest uppercase text-xs">Client Success</span>
+            {/* Corner Brackets */}
+            <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary" />
+            <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary" />
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-900 dark:text-white">Client Testimonials</span>
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter"
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight"
           >
-            Don't just take <br /> <span className="text-transparent outline-text opacity-50" style={{ WebkitTextStroke: '2px white' }}>my word for it.</span>
+            Testimonials that <br /> <span className="text-primary">Speaks to My Results</span>
           </motion.h2>
         </div>
 
-        <div className="relative w-full max-w-4xl mx-auto h-[450px] md:h-[500px] flex items-center justify-center perspective-[2000px]">
-          <AnimatePresence mode="popLayout">
-            {cards.map((testimonial, index) => {
-              // Calculate stack styles
-              const isFront = index === 0;
-              const zIndex = cards.length - index;
-              const yOffset = index * 25; // Push cards down
-              const scale = 1 - index * 0.05; // Shrink cards slightly
-              const opacity = index < 3 ? 1 - index * 0.2 : 0; // Fade out deep cards
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-gray-50 dark:bg-[#111111] border border-gray-200 dark:border-white/5 rounded-[2rem] p-8 md:p-10 relative group"
+            >
+              {/* Left Green Bar */}
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1/2 bg-primary rounded-r-full" />
 
-              return (
-                <motion.div
-                  key={testimonial.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.8, y: 100 }}
-                  animate={{
-                    opacity: opacity,
-                    scale: scale,
-                    y: yOffset,
-                    zIndex: zIndex,
-                    rotateX: index * 5 // Tilt back
-                  }}
-                  exit={{
-                    x: -800, // Fly off screen left
-                    opacity: 0,
-                    scale: 0.8,
-                    rotate: -20, // Spin while exiting
-                    transition: { duration: 0.5, ease: "anticipate" }
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 20,
-                    mass: 1
-                  }}
-                  className={`absolute w-full h-full md:h-auto md:min-h-[400px] rounded-[3rem] p-10 md:p-16 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-gradient-to-br ${testimonial.color} cursor-grab active:cursor-grabbing backdrop-blur-xl`}
-                  drag={isFront ? "x" : false}
-                  dragConstraints={{ left: 0, right: 0 }}
-                  onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = Math.abs(offset.x) * velocity.x;
-                    if (swipe < -10000 || offset.x < -150) {
-                      nextCard();
-                    } else if (swipe > 10000 || offset.x > 150) {
-                      prevCard();
-                    }
-                  }}
-                >
-                  <Quote className="absolute top-10 right-10 md:top-16 md:right-16 text-white/5" size={120} />
-
-                  <div className="flex flex-col h-full justify-between relative z-10">
-                    <p className="text-white/90 text-xl md:text-4xl font-medium tracking-tight leading-[1.3] max-w-3xl mb-12">
-                      "{testimonial.content}"
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-6">
-                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20">
-                          <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover grayscale" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl md:text-2xl font-black text-white">{testimonial.name}</h4>
-                          <p className="text-primary font-bold uppercase tracking-widest text-xs mt-1">{testimonial.role}</p>
-                        </div>
+              <div className="flex flex-col gap-8">
+                <div className="flex justify-between items-start">
+                  <div className="flex gap-6 items-center">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 dark:border-white/10 p-1">
+                      <img src={item.avatar} alt={item.name} className="w-full h-full object-cover rounded-full grayscale" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{item.name}</h4>
+                      <p className="text-gray-500 dark:text-white/40 text-sm mb-3">{item.role}</p>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} fill="#00FF00" className="text-primary" />
+                        ))}
+                        <span className="text-gray-600 dark:text-white/60 text-xs font-bold ml-2">{item.rating.toFixed(1)}</span>
                       </div>
-
-                      {/* Floating Next Button only visible on front card */}
-                      {isFront && (
-                        <button
-                          onClick={nextCard}
-                          className="hidden md:flex w-16 h-16 rounded-full bg-white text-black items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300"
-                        >
-                          <ArrowRight size={24} />
-                        </button>
-                      )}
                     </div>
                   </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </div>
+                  <div className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                    <Quote size={20} fill="currentColor" />
+                  </div>
+                </div>
 
-        {/* Mobile controls */}
-        <div className="flex justify-center items-center gap-6 mt-16 md:hidden relative z-20">
-          <button
-            onClick={prevCard}
-            className="w-14 h-14 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white active:bg-primary active:text-black transition-all"
-          >
-            <ArrowLeft size={20} />
-          </button>
-          <span className="text-white/40 font-bold text-xs uppercase tracking-widest">Swipe or Click</span>
-          <button
-            onClick={nextCard}
-            className="w-14 h-14 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white active:bg-primary active:text-black transition-all"
-          >
-            <ArrowRight size={20} />
-          </button>
+                <p className="text-gray-600 dark:text-white/60 leading-relaxed">
+                  {item.content}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-
       </div>
     </section>
   );

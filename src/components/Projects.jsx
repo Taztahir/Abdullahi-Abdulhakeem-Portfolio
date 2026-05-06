@@ -72,10 +72,10 @@ const MarqueeRow = ({ items, direction = "left", speed = 40 }) => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 bg-[#030303] relative overflow-hidden min-h-screen flex flex-col justify-center transform-gpu">
+    <section id="projects" className="py-32 bg-white dark:bg-[#030303] relative overflow-hidden min-h-screen flex flex-col justify-center transition-colors duration-500 transform-gpu">
 
       {/* Background Noise */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10 mb-20 text-center">
@@ -83,19 +83,18 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/20 bg-primary/10 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-dashed border-primary/40 bg-primary/5 text-primary mb-8"
         >
-          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-primary font-bold tracking-widest uppercase text-xs">Selected Works</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider">Selected Works</span>
         </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl lg:text-[6rem] font-black text-white leading-[0.9] tracking-tighter"
+          className="text-5xl md:text-8xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight"
         >
-          Visual <span className="text-white/20 italic font-serif font-light">Gallery.</span>
+          Visual <span className="text-primary italic">Gallery.</span>
         </motion.h2>
       </div>
 
