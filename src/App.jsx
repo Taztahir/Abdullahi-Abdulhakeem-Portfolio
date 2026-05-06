@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-darker text-white selection:bg-primary selection:text-black relative">
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999]" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }} />
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[1]" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }} />
       <CustomCursor />
       <Navbar />
       <main>

@@ -12,16 +12,25 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
+  useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
     localStorage.setItem('theme', theme);
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, [theme]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -31,7 +40,6 @@ const Navbar = () => {
     { name: 'Home', href: '#home' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Blogs', href: '#blogs' },
     { name: 'About Me', href: '#about' },
     { name: 'Testimonials', href: '#testimonials' },
   ];
@@ -58,7 +66,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${isScrolled
-        ? 'py-4 bg-white/95 dark:bg-[#050505]/95 backdrop-blur-xl shadow-2xl'
+        ? 'py-4 bg-white dark:bg-[#030303] shadow-xl'
         : 'py-8 bg-transparent'
         }`}
     >
@@ -79,7 +87,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -93,12 +101,13 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-4">
+            {/* Theme Toggle - Visible on all screens */}
             <button
               onClick={toggleTheme}
               className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${theme === 'dark'
-                ? 'bg-white/5 border border-white/10 text-white/50 hover:text-white'
-                : 'bg-black/5 border border-black/10 text-black/50 hover:text-black'
+                ? 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'
+                : 'bg-black/5 border border-black/10 text-black/50 hover:text-black hover:bg-black/10'
                 }`}
             >
               {theme === 'dark' ? (
@@ -107,25 +116,27 @@ const Navbar = () => {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
               )}
             </button>
+
+            {/* Let's Talk - Desktop Only */}
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="bg-primary text-black px-6 py-2.5 rounded-full font-bold text-[13px] hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+              className="hidden md:flex bg-primary text-black px-6 py-2.5 rounded-full font-bold text-[13px] hover:scale-105 active:scale-95 transition-all items-center gap-2"
             >
               Let's Talk
             </a>
-          </div>
 
-          {/* Mobile Toggle */}
-          <button
-            className={`md:hidden w-12 h-12 rounded-full border transition-all flex items-center justify-center ${theme === 'dark'
-              ? 'bg-white/5 border-white/10 text-white hover:bg-primary hover:text-black'
-              : 'bg-black/5 border-black/10 text-black hover:bg-primary hover:text-white'
-              }`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Mobile Menu Toggle */}
+            <button
+              className={`lg:hidden w-10 h-10 rounded-full border transition-all flex items-center justify-center ${theme === 'dark'
+                ? 'bg-white/5 border-white/10 text-white hover:bg-primary hover:text-black'
+                : 'bg-black/5 border-black/10 text-black hover:bg-primary hover:text-white'
+                }`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -137,7 +148,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`md:hidden fixed inset-0 z-[1100] transition-colors duration-500 flex flex-col ${theme === 'dark' ? 'bg-[#030303]' : 'bg-white'
+            className={`lg:hidden fixed inset-0 z-[10000] flex flex-col ${theme === 'dark' ? 'bg-[#030303]' : 'bg-white'
               }`}
           >
             {/* Header in Overlay */}
@@ -159,9 +170,8 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Menu Links */}
-            <div className="flex-grow flex flex-col justify-center px-8 pb-20">
-              <div className="flex flex-col gap-4">
+            <div className="flex-grow flex flex-col justify-center px-8">
+              <div className="flex flex-col gap-6">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
@@ -172,13 +182,10 @@ const Navbar = () => {
                     <a
                       href={link.href}
                       onClick={(e) => scrollToSection(e, link.href)}
-                      className={`text-3xl md:text-5xl font-black uppercase tracking-tighter transition-all block w-full relative group ${theme === 'dark' ? 'text-white/40 hover:text-white' : 'text-black/40 hover:text-black'
+                      className={`text-4xl md:text-5xl font-black uppercase tracking-tighter transition-all block w-full relative group ${theme === 'dark' ? 'text-white/40 hover:text-white' : 'text-black/40 hover:text-black'
                         }`}
                     >
                       <span className="relative z-10">{link.name}</span>
-                      <motion.div
-                        className="absolute left-0 bottom-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-300"
-                      />
                     </a>
                   </motion.div>
                 ))}
@@ -217,17 +224,6 @@ const Navbar = () => {
                     </a>
                   ))}
                 </div>
-                <button
-                  onClick={toggleTheme}
-                  className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${theme === 'dark' ? 'bg-white/5 text-white' : 'bg-black/5 text-black'
-                    }`}
-                >
-                  {theme === 'dark' ? (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
-                  ) : (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
-                  )}
-                </button>
               </div>
             </motion.div>
           </motion.div>

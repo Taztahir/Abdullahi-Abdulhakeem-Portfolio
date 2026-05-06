@@ -97,7 +97,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute bottom-1/4 left-0 z-30 bg-primary text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider flex items-center gap-2"
+                className="absolute md:bottom-1/4 bottom-[18%] left-0 z-30 bg-primary text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider flex items-center gap-2"
               >
                 <div className="w-2 h-2 bg-black rounded-full" />
                 Product Designer
@@ -108,7 +108,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.4, duration: 0.6 }}
-                className="absolute top-1/2 right-10 z-30 bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider border border-white/20 dark:border-black/20"
+                className="absolute md:top-1/2 top-[58%] right-10 z-30 bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider border border-white/20 dark:border-black/20"
               >
                 UI/UX Designer
               </motion.div>
