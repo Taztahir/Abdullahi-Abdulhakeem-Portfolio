@@ -55,7 +55,11 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-7xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-7">
-            <form action="https://formspree.io/f/your-id" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form action="https://formsubmit.co/abdullahiabdulhakeem234@gmail.com" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* FormSubmit Config */}
+              <input type="hidden" name="_subject" value="New Portfolio Message!" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <div className="flex flex-col gap-2">
                 <label className="text-[13px] font-bold text-gray-900 dark:text-white">Your Name *</label>
                 <input

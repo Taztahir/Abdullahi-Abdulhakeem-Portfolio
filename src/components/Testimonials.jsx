@@ -2,37 +2,41 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
+import avatar1 from '../assets/avatar1.png';
+import avatar2 from '../assets/avatar2.png';
+import avatar3 from '../assets/avatar3.png';
+
 const testimonials = [
   {
     id: 1,
-    name: 'Leslie Alexander',
-    role: 'CEO, Software Company',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop',
+    name: 'Tunde Balogun',
+    role: 'CEO, Lagos Tech Hub',
+    content: "Abdullahi's eye for detail is unmatched. He completely rebranded our platform, making it the most intuitive fintech app in the Nigerian market today. A true professional!",
+    avatar: avatar1,
     rating: 5.0
   },
   {
     id: 2,
-    name: 'Dianne Russell',
-    role: 'CEO, Event Booking App',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
+    name: 'Fatima Yusuf',
+    role: 'Founder, Abuja Creative Studio',
+    content: "Working with Abdullahi was a breeze. He took our complex ideas and turned them into a clean, minimalist design that our clients absolutely love. Highly recommended!",
+    avatar: avatar2,
     rating: 5.0
   },
   {
     id: 3,
-    name: 'Kathryn Murphy',
-    role: 'CEO, Coffee Shop App',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop',
+    name: 'Chidi Okafor',
+    role: 'Product Manager, FinTech Solutions',
+    content: "His ability to understand user needs and translate them into beautiful UI is incredible. He delivered well ahead of schedule and the results speak for themselves.",
+    avatar: avatar3,
     rating: 5.0
   },
   {
     id: 4,
-    name: 'Robert Fox',
-    role: 'CEO, Pet Food App',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop',
+    name: 'Bisi Adeyemi',
+    role: 'Head of Design, Kuda Bank',
+    content: "Abdullahi is a rare talent. He doesn't just design; he solves problems. Our user engagement increased by 40% after implementing his design recommendations.",
+    avatar: avatar2,
     rating: 5.0
   }
 ];

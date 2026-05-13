@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
-import AbdullahProfile from '../assets/AbdullahProfile.jpeg';
+import { Download, ArrowUpRight } from 'lucide-react';
+import AbdullahNoBackground from '../assets/Abdullah-Nobackground.png';
 
 const About = () => {
   const stats = [
@@ -20,47 +20,39 @@ const About = () => {
              <span className="text-[12rem] font-black tracking-tighter uppercase leading-none text-gray-900 dark:text-white">About Me</span>
           </div>
 
-          {/* Left Side: Circular Image with Clustered Tags */}
+          {/* Left Side: Card Image */}
           <div className="w-full lg:w-1/2 flex items-center justify-center relative z-10">
-            <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
-              {/* Background Circle with Pattern */}
-              <div className="absolute w-[85%] h-[85%] rounded-full bg-primary overflow-hidden">
-                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '16px 16px' }} />
-                 <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/wavy-lines.png')" }} />
-              </div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative w-full max-w-[480px] aspect-[4/5] bg-primary rounded-[60px] overflow-hidden group shadow-2xl shadow-primary/5"
+            >
+              {/* Decorative blobs */}
+              <div className="absolute top-[-20px] right-[-20px] w-48 h-48 bg-secondary/40 rounded-full blur-3xl" />
+              <div className="absolute top-10 right-10 w-24 h-24 bg-secondary/60 rounded-full blur-xl opacity-60" />
+              <div className="absolute bottom-[-50px] left-[-50px] w-64 h-64 bg-black/10 rounded-full blur-3xl" />
 
-              {/* Profile Image Cutout */}
-              <div className="relative z-10 w-full h-full flex items-end justify-center">
+              {/* Profile Image */}
+              <div className="relative z-10 w-full h-full flex items-end justify-center overflow-hidden">
                 <img
-                  src={AbdullahProfile}
+                  src={AbdullahNoBackground}
                   alt="Abdullahi"
-                  className="w-[80%] h-auto filter grayscale drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  className="w-[100%] h-auto object-contain filter grayscale transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
-              {/* Clustered Skill Tags at the bottom */}
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full flex flex-wrap justify-center gap-2 z-20 px-4">
-                {[
-                  { name: "UX/UI Design", color: "bg-primary text-black" },
-                  { name: "Mobile App Design", color: "bg-gray-900 dark:bg-black text-white border border-white/20" },
-                  { name: "Website Design", color: "bg-primary text-black" },
-                  { name: "Design System", color: "bg-primary text-black" },
-                  { name: "Prototype", color: "bg-gray-900 dark:bg-black text-white border border-white/20" },
-                  { name: "Dashboard", color: "bg-gray-900 dark:bg-black text-white border border-white/20" },
-                  { name: "Wireframe Design", color: "bg-primary text-black" }
-                ].map((skill, i) => (
-                  <motion.span
-                    key={skill.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.05 }}
-                    className={`px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-tight shadow-xl ${skill.color}`}
-                  >
-                    {skill.name}
-                  </motion.span>
-                ))}
+              {/* Bottom Info Card */}
+              <div className="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-xl rounded-[32px] p-5 flex items-center justify-between z-20 border border-white/10">
+                <div>
+                  <h3 className="text-white font-bold text-base md:text-lg">Abdullah Abdulhakeem</h3>
+                  <p className="text-primary font-bold text-[9px] uppercase tracking-[0.2em] mt-1">Product & Brand Designer</p>
+                </div>
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-black">
+                  <ArrowUpRight size={18} />
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Side: Content */}

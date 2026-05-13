@@ -32,7 +32,7 @@ const Footer = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="text-black font-bold uppercase tracking-tight px-12 text-2xl flex items-center gap-12">
-                Web Design <span className="text-3xl">✻</span> App Design <span className="text-3xl">✻</span> Dashboard <span className="text-3xl">✻</span> Wireframe <span className="text-3xl">✻</span>
+                Lagos Tech Scene <span className="text-3xl">✻</span> Abuja Innovation <span className="text-3xl">✻</span> Yaba Hub <span className="text-3xl">✻</span> FinTech Pioneers <span className="text-3xl">✻</span> Creative Nigeria <span className="text-3xl">✻</span>
               </span>
             </div>
           ))}
@@ -127,13 +127,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-white dark:bg-white relative overflow-hidden py-6">
+      <div className="bg-white dark:bg-primary relative overflow-hidden py-6">
         {/* Wavy Pattern */}
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/wavy-lines.png')" }} />
 
         <div className="container mx-auto px-6 flex flex-col md:row justify-center items-center gap-4 relative z-10 text-black font-bold text-xs md:flex-row">
           <span>Copyright © {new Date().getFullYear()} Abdullahi. All Rights Reserved.</span>
-
         </div>
       </div>
 

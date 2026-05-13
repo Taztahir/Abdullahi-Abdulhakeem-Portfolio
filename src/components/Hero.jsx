@@ -43,13 +43,13 @@ const Hero = () => {
               variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
               className="flex flex-col mb-8"
             >
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-[80px] font-bold leading-[1.05] tracking-tight mb-2">
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight mb-2">
                 <span className="text-primary">I'm Abdullahi,</span>
               </motion.h1>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-[80px] font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight mb-2">
-                Product Designer
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight mb-2">
+                Brand & Product Designer
               </motion.h1>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-[80px] font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight">
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight">
                 based in Nigeria.
               </motion.h1>
             </motion.div>
@@ -80,75 +80,67 @@ const Hero = () => {
 
           {/* Right Side: Image with Graphics */}
           <div className="w-full lg:w-1/2 flex items-center justify-center relative order-1 lg:order-2 py-12">
-            <div className="relative w-full max-w-[550px] aspect-square flex items-center justify-center">
-
-              {/* Green Graphic Circle with Wavy Pattern */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="absolute w-[80%] h-[80%] bg-primary rounded-full z-0 overflow-hidden flex items-center justify-center"
-              >
-                <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/wavy-lines.png')" }} />
-              </motion.div>
-
-              {/* Floating Label: Product Designer */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute md:bottom-1/4 bottom-[18%] left-0 z-30 bg-primary text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider flex items-center gap-2"
-              >
-                <div className="w-2 h-2 bg-black rounded-full" />
-                Product Designer
-              </motion.div>
-
-              {/* Floating Label: UI/UX Designer */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4, duration: 0.6 }}
-                className="absolute md:top-1/2 top-[58%] right-10 z-30 bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-wider border border-white/20 dark:border-black/20"
-              >
-                UI/UX Designer
-              </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full max-w-[500px] aspect-[4/5] bg-primary rounded-[60px] overflow-hidden group shadow-2xl shadow-primary/10"
+            >
+              {/* Decorative blobs */}
+              <div className="absolute top-[-20px] right-[-20px] w-48 h-48 bg-secondary/40 rounded-full blur-3xl animate-pulse-slow" />
+              <div className="absolute top-10 right-10 w-24 h-24 bg-secondary/60 rounded-full blur-xl opacity-60" />
+              <div className="absolute bottom-[-50px] left-[-50px] w-64 h-64 bg-black/10 rounded-full blur-3xl" />
 
               {/* Profile Image */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="relative z-10 w-[100%] h-[100%] flex items-end justify-center overflow-hidden"
+                transition={{ duration: 1, delay: 0.3 }}
+                className="relative z-10 w-full h-full flex items-end justify-center overflow-hidden"
               >
                 <img
                   src={AbdullahProfile}
                   alt="Abdullahi"
-                  className="w-[90%] h-auto object-contain filter grayscale drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  className="w-[110%] h-auto object-contain filter grayscale drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-transform duration-700 group-hover:scale-105"
                 />
               </motion.div>
 
-              {/* Circular Text Badge */}
+              {/* Bottom Info Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-xl rounded-[32px] p-5 flex items-center justify-between z-20 border border-white/10"
+              >
+                <div>
+                  <h3 className="text-white font-bold text-lg md:text-xl">Abdullah Abdulhakeem</h3>
+                  <p className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mt-1">Product & Brand Designer</p>
+                </div>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 45 }}
+                  className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black cursor-pointer shadow-lg shadow-primary/20"
+                >
+                  <ArrowUpRight size={22} />
+                </motion.div>
+              </motion.div>
+
+              {/* Hire Me Floating Badge */}
               <motion.a
                 href="#contact"
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-                className="absolute top-1/4 right-0 w-28 h-28 z-20 hidden md:block group/badge cursor-pointer"
+                className="absolute top-8 left-8 w-24 h-24 z-20 hidden md:block group/badge cursor-pointer mix-blend-difference"
               >
                 <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <path id="circlePath" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
-                  <text className="text-[10px] font-bold uppercase fill-gray-900 dark:fill-white tracking-[0.1em] transition-colors group-hover/badge:fill-primary">
-                    <textPath xlinkHref="#circlePath">
+                  <path id="circlePathHero" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
+                  <text className="text-[10px] font-bold uppercase fill-white tracking-[0.1em]">
+                    <textPath xlinkHref="#circlePathHero">
                       ✦ Hire Me ✦ Hire Me ✦ Hire Me ✦ Hire Me ✦
                     </textPath>
                   </text>
                 </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black group-hover/badge:scale-110 transition-transform">
-                    <X size={20} className="font-bold" />
-                  </div>
-                </div>
               </motion.a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -163,7 +155,7 @@ const Hero = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="text-black font-bold uppercase tracking-tight px-12 text-2xl flex items-center gap-12">
-                Web Design <span className="text-3xl">✻</span> App Design <span className="text-3xl">✻</span> Dashboard <span className="text-3xl">✻</span> Wireframe <span className="text-3xl">✻</span>
+                Lagos Tech Scene <span className="text-3xl">✻</span> Abuja Innovation <span className="text-3xl">✻</span> Yaba Hub <span className="text-3xl">✻</span> FinTech Pioneers <span className="text-3xl">✻</span> Creative Nigeria <span className="text-3xl">✻</span>
               </span>
             </div>
           ))}
