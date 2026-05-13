@@ -78,7 +78,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
         {[...items, ...items, ...items].map((project, idx) => (
           <div
             key={`${project.id}-${idx}`}
-            className="relative w-[350px] md:w-[800px] aspect-[14/9] max-md:aspect-[8/10] rounded-[1rem] md:rounded-[4rem] overflow-hidden shrink-0 border border-gray-100 dark:border-white/5 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+            className="relative w-[350px] md:w-[800px] aspect-[14/9] max-md:aspect-[8/10] rounded-[1rem] md:rounded-[4rem] overflow-hidden shrink-0 border border-gray-100 dark:border-white/5 shadow-2xl transition-all duration-700"
           >
             <img
               src={project.image}
@@ -140,12 +140,12 @@ const Projects = () => {
               transition={{ delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="relative aspect-[16/10] bg-gray-100 dark:bg-[#111111] rounded-[40px] md:rounded-[60px] overflow-hidden">
+              <div className="relative aspect-[16/10] bg-gray-100 dark:bg-[#111111] rounded-[10px] overflow-hidden">
                 {/* Project Image */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
                 />
 
                 {/* Overlay on Hover */}
