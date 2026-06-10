@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Download, X } from 'lucide-react';
-import AbdullahProfile from '../assets/Abdullah-Nobackground.png';
+import AbdullahProfile from '../assets/AbdullahProfile.jpeg';
 
 const Hero = () => {
   const fadeUp = {

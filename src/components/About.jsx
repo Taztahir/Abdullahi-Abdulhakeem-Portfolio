@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowUpRight } from 'lucide-react';
-import AbdullahNoBackground from '../assets/Abdullah-Nobackground.png';
+import AbdullahNoBackground from '../assets/AbdullahProfile.jpeg';
 
 const About = () => {
   const stats = [
@@ -14,15 +14,15 @@ const About = () => {
     <section id="about" className="py-10 md:py-32 bg-white dark:bg-[#030303] text-gray-900 dark:text-white relative overflow-hidden border-t border-gray-100 dark:border-white/5 transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative">
-          
+
           {/* Background Text */}
           <div className="absolute top-1/2 right-0 -translate-y-1/2 select-none pointer-events-none opacity-[0.03] z-0">
-             <span className="text-[12rem] font-black tracking-tighter uppercase leading-none text-gray-900 dark:text-white">About Me</span>
+            <span className="text-[12rem] font-black tracking-tighter uppercase leading-none text-gray-900 dark:text-white">About Me</span>
           </div>
 
           {/* Left Side: Card Image */}
           <div className="w-full lg:w-1/2 flex items-center justify-center relative z-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -92,18 +92,18 @@ const About = () => {
 
             {/* Stats Row */}
             <div className="flex flex-wrap gap-12 mb-16">
-                <div className="flex flex-col gap-2">
-                  <span className="text-4xl font-bold text-primary tracking-tight">100+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Projects Completed</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-4xl font-bold text-primary tracking-tight">20+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Happy Clients</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-4xl font-bold text-primary tracking-tight">4+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Years of Experience</span>
-                </div>
+              <div className="flex flex-col gap-2">
+                <span className="text-4xl font-bold text-primary tracking-tight">100+</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Projects Completed</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="text-4xl font-bold text-primary tracking-tight">20+</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Happy Clients</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="text-4xl font-bold text-primary tracking-tight">4+</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Years of Experience</span>
+              </div>
             </div>
 
             <motion.a
