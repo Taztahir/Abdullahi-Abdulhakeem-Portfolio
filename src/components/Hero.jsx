@@ -155,7 +155,7 @@ const Hero = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="text-black font-bold uppercase tracking-tight px-12 text-2xl flex items-center gap-12">
-                Lagos Tech Scene <span className="text-3xl">✻</span> Abuja Innovation <span className="text-3xl">✻</span> Yaba Hub <span className="text-3xl">✻</span> FinTech Pioneers <span className="text-3xl">✻</span> Creative Nigeria <span className="text-3xl">✻</span>
+                Brand Identity <span className="text-3xl">✻</span> Logo Design <span className="text-3xl">✻</span> Packaging Design <span className="text-3xl">✻</span> Flyer Design <span className="text-3xl">✻</span> UI and Web Design <span className="text-3xl">✻</span>
               </span>
             </div>
           ))}

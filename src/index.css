@@ -16,7 +16,7 @@ html {
   --font-serif: "Playfair Display", serif;
 }
 
-/* Enable class-based dark mode for Tailwind 4 */
+/* Dark mode is always active */
 @custom-variant dark (&:where(.dark, .dark *));
 @variant dark (&:where(.dark, .dark *));
 
@@ -32,12 +32,6 @@ html {
 }
 
 html, body {
-  background-color: white;
-  color: #1a1a1a;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-html.dark, html.dark body {
   background-color: #030303;
   color: white;
 }

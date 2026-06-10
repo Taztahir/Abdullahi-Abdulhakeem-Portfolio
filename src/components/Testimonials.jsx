@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
@@ -91,9 +90,6 @@ const Testimonials = () => {
               <div className="flex flex-col gap-8">
                 <div className="flex justify-between items-start">
                   <div className="flex gap-6 items-center">
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 dark:border-white/10 p-1">
-                      <img src={item.avatar} alt={item.name} className="w-full h-full object-cover rounded-full grayscale" />
-                    </div>
                     <div>
                       <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{item.name}</h4>
                       <p className="text-gray-500 dark:text-white/40 text-sm mb-3">{item.role}</p>
