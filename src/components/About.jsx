@@ -38,7 +38,7 @@ const About = () => {
                 <img
                   src={AbdullahNoBackground}
                   alt="Abdullahi"
-                  className="w-[100%] h-auto object-contain filter grayscale transition-transform duration-700 group-hover:scale-105"
+                  className="w-[100%] h-auto object-contain filter transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 

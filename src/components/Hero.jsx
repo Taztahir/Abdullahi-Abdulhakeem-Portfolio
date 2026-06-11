@@ -101,7 +101,7 @@ const Hero = () => {
                 <img
                   src={AbdullahProfile}
                   alt="Abdullahi"
-                  className="w-[110%] h-auto object-contain filter grayscale drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-transform duration-700 group-hover:scale-105"
+                  className="w-[110%] h-auto object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-transform duration-700 group-hover:scale-105"
                 />
               </motion.div>
 
