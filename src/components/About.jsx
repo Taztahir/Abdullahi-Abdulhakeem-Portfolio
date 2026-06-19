@@ -46,7 +46,7 @@ const About = () => {
               {/* Bottom Info Card */}
               <div className="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-xl rounded-[32px] p-5 flex items-center justify-between z-20 border border-white/10">
                 <div>
-                  <h3 className="text-white font-bold text-base md:text-lg">Abdullah Abdulhakeem</h3>
+                  <h3 className="text-white font-bold text-base md:text-lg">Abdullahi Abdulhakeem</h3>
                   <p className="text-primary font-bold text-[9px] uppercase tracking-[0.2em] mt-1">Product & Brand Designer</p>
                 </div>
                 <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-black">
