@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Download, X } from 'lucide-react';
 import AbdullahProfile from '../assets/AbdullahProfile.jpeg';
+import ResumeFile from '../assets/Abdullahi_Adeyemi_Resume.docx?url';
 
 const Hero = () => {
   const fadeUp = {
@@ -72,7 +73,12 @@ const Hero = () => {
               <a href="#projects" className="bg-primary text-black px-10 py-4 rounded-full font-bold text-[14px] hover:scale-105 transition-all shadow-lg shadow-primary/20">
                 View My Work
               </a>
-              <a href="#" className="bg-transparent border border-black/10 dark:border-white/20 text-gray-900 dark:text-white px-10 py-4 rounded-full font-bold text-[14px] hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+              <a
+                href={ResumeFile}
+                download="Abdullahi_Adeyemi_Resume.docx"
+                className="inline-flex items-center gap-2 bg-transparent border border-black/10 dark:border-white/20 text-gray-900 dark:text-white px-10 py-4 rounded-full font-bold text-[14px] hover:bg-black/5 dark:hover:bg-white/5 transition-all"
+              >
+                <Download size={16} />
                 Download CV
               </a>
             </motion.div>
@@ -113,8 +119,8 @@ const Hero = () => {
                 className="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-xl rounded-[32px] p-5 flex items-center justify-between z-20 border border-white/10"
               >
                 <div>
-                  <h3 className="text-white font-bold text-lg md:text-xl">Abdullah Abdulhakeem</h3>
-                  <p className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mt-1">Product & Brand Designer</p>
+                  <h3 className="text-white font-bold text-lg md:text-xl">Abdullahi Abdulhakeem</h3>
+                  <p className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mt-1">Brand & Product Designer</p>
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 45 }}

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowUpRight } from 'lucide-react';
 import AbdullahNoBackground from '../assets/AbdullahProfile.jpeg';
+import ResumeFile from '../assets/Abdullahi_Adeyemi_Resume.docx?url';
 
 const About = () => {
   const stats = [
@@ -107,11 +108,13 @@ const About = () => {
             </div>
 
             <motion.a
-              href="#"
+              href={ResumeFile}
+              download="Abdullahi_Adeyemi_Resume.docx"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary text-black px-10 py-4 rounded-full font-bold text-[13px] transition-all shadow-lg shadow-primary/20 inline-block cursor-pointer"
+              className="inline-flex items-center gap-2 bg-primary text-black px-10 py-4 rounded-full font-bold text-[13px] transition-all shadow-lg shadow-primary/20 cursor-pointer"
             >
+              <Download size={16} />
               Download CV
             </motion.a>
           </div>
