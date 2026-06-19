@@ -50,9 +50,7 @@ const Hero = () => {
               <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight mb-2">
                 Brand & Product Designer
               </motion.h1>
-              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight">
-                based in Nigeria.
-              </motion.h1>
+
             </motion.div>
 
             <motion.p
@@ -61,7 +59,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-gray-500 dark:text-white/40 text-lg md:text-xl max-w-xl font-medium leading-relaxed mb-12"
             >
-              I'm an experienced Product Designer with 4+ years in the field, collaborating with various companies and startups.
+              I'm an experienced Product Designer with 3+ years in the field, collaborating with various companies and startups.
             </motion.p>
 
             <motion.div
@@ -125,8 +123,10 @@ const Hero = () => {
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 45 }}
                   className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black cursor-pointer shadow-lg shadow-primary/20"
-                >
-                  <ArrowUpRight size={22} />
+                ><a href="#projects">
+                    <ArrowUpRight size={22} />
+                  </a>
+
                 </motion.div>
               </motion.div>
 
@@ -135,12 +135,12 @@ const Hero = () => {
                 href="#contact"
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-                className="absolute top-8 left-8 w-24 h-24 z-20 hidden md:block group/badge cursor-pointer mix-blend-difference"
+                className="absolute top-8 left-8 w-16 md:w-24 md:h-24 z-20 md:block group/badge cursor-pointer"
               >
                 <svg viewBox="0 0 100 100" className="w-full h-full">
                   <path id="circlePathHero" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
                   <text className="text-[10px] font-bold uppercase fill-white tracking-[0.1em]">
-                    <textPath xlinkHref="#circlePathHero">
+                    <textPath xlinkHref="#circlePathHero" className=''>
                       ✦ Hire Me ✦ Hire Me ✦ Hire Me ✦ Hire Me ✦
                     </textPath>
                   </text>

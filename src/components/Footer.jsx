@@ -32,7 +32,7 @@ const Footer = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="text-black font-bold uppercase tracking-tight px-12 text-2xl flex items-center gap-12">
-                Lagos Tech Scene <span className="text-3xl">✻</span> Abuja Innovation <span className="text-3xl">✻</span> Yaba Hub <span className="text-3xl">✻</span> FinTech Pioneers <span className="text-3xl">✻</span> Creative Nigeria <span className="text-3xl">✻</span>
+                Brand Identity <span className="text-3xl">✻</span> Logo Design <span className="text-3xl">✻</span> Packaging Design <span className="text-3xl">✻</span> Flyer Design <span className="text-3xl">✻</span> UI and Web Design <span className="text-3xl">✻</span>
               </span>
             </div>
           ))}
@@ -45,7 +45,7 @@ const Footer = () => {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
             Let's <span className="text-primary">Connect</span> there
           </h2>
-          <a 
+          <a
             href="#contact"
             className="bg-primary text-black px-10 py-4 rounded-full font-bold text-[14px] hover:scale-105 transition-all shadow-lg shadow-primary/20"
           >

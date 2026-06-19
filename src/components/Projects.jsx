@@ -169,31 +169,29 @@ const Projects = () => {
       <div className="container mx-auto px-6 mb-24">
 
         {/* ── Header ── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-dashed border-primary/40 bg-primary/5 text-primary mb-6"
-            >
-              <span className="text-[10px] font-bold uppercase tracking-wider">Portfolio Gallery</span>
-            </motion.div>
+        <div className="flex flex-col items-center text-center gap-6 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-dashed border-primary/40 bg-primary/5 text-primary"
+          >
+            <span className="text-[10px] font-bold uppercase tracking-wider">Portfolio Gallery</span>
+          </motion.div>
 
-            <motion.h2
-              id="projects-heading"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] tracking-tight"
-            >
-              Selected <span className="text-primary">Works &amp; Projects</span>
-            </motion.h2>
-          </div>
+          <motion.h2
+            id="projects-heading"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] tracking-tight"
+          >
+            Selected <span className="text-primary">Works &amp; Projects</span>
+          </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-gray-500 dark:text-white/40 max-w-sm font-medium text-lg leading-relaxed"
           >

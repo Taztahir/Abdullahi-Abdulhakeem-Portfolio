@@ -50,7 +50,9 @@ const About = () => {
                   <p className="text-primary font-bold text-[9px] uppercase tracking-[0.2em] mt-1">Product & Brand Designer</p>
                 </div>
                 <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-black">
-                  <ArrowUpRight size={18} />
+                  <a href="#projects">
+                    <ArrowUpRight size={18} />
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -98,11 +100,11 @@ const About = () => {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Projects Completed</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-4xl font-bold text-primary tracking-tight">20+</span>
+                <span className="text-4xl font-bold text-primary tracking-tight">100+</span>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Happy Clients</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-4xl font-bold text-primary tracking-tight">4+</span>
+                <span className="text-4xl font-bold text-primary tracking-tight">3+</span>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40">Years of Experience</span>
               </div>
             </div>

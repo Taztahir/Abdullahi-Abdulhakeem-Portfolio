@@ -155,12 +155,12 @@ const Services = () => {
       <div className="container mx-auto px-6">
 
         {/* ── Section Header ── */}
-        <div className="mb-20">
+        <div className="mb-20 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="mb-6 relative inline-block px-6 py-1"
+            className="mb-6 relative inline-flex px-6 py-1"
           >
             <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary" />
